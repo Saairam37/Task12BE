@@ -94,7 +94,7 @@ const authControllers = {
             console.log("User before save:", user);
 
 
-            const resetLink = `https://passwordreset-bysaairam.netlify.app/reset_password_confirm/${token}`;
+            const resetLink = `https://passwordreset-bysaairam.netlify.app/reset_password/${token}`;
 
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
