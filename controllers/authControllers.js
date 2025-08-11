@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET, EMAIL, EMAIL_PASS } = require('../utils/config');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
-// const cookie = require('cookie');
+const cookie = require('cookie');
 
 const authControllers = {
     register: async (req, res) => {
@@ -75,7 +75,7 @@ const authControllers = {
         res.clearCookie('token');
         res.status(200).json({ message: 'User logged out successfully' });
     }
-    , resetPassword: async (req, res) => {
+    ,resetPassword: async (req, res) => {
         try {
 
             const { email } = req.body;
@@ -96,7 +96,7 @@ const authControllers = {
 
             const resetLink = `https://passwordreset-bysaairam.netlify.app/reset-password/${token}`;
 
-            const transporter = await nodemailer.createTransport({
+            const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
                     user: EMAIL,
@@ -118,7 +118,7 @@ const authControllers = {
             res.status(200).json({ message: 'Password reset link sent to your email' });
         }
         catch (err) {
-            res.status(500).json({ message: `There is an error in resetting password : ${err.message}` })
+            res.status(500).json({ message: `There is an error in reseting password : ${err.message}` })
         }
     },
     resetPasswordConfirm: async (req, res) => {

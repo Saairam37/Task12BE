@@ -7,7 +7,7 @@ const authRouter = express.Router();
 authRouter.post('/register',register);
 authRouter.post('/login',login);
 authRouter.post('/logout',logout);
-authRouter.post('/reset_password',resetPassword);
-authRouter.post('/reset_password_confirm/:token',resetPasswordConfirm);
+authRouter.post('/reset_password_confirm',resetPassword);
+authRouter.post('/reset_password/:token',resetPasswordConfirm);
 
 module.exports = authRouter;
