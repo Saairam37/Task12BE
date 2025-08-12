@@ -150,4 +150,4 @@ EMAIL_PASS=your_app_password
 
 ## 👨‍💻 Author
 
-Made with ❤️ by [Subramaniyajothi](https://github.com/Subramaniyajothi6)
+Made with ❤️ by [Saairam R P](https://github.com/Saairam37)
